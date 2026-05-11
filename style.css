@@ -1,0 +1,49 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(32, 115, 194, 0.979);
+    height: 100vh;
+}
+#header{
+    display: flex;
+}
+.div__header{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    padding:25px;
+
+}
+.logo{
+    width: 45px;
+}
+.nombre__logo{
+    color: rgb(207, 207, 207);
+}
+
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login__registrar{
+    border: 1px solid white;
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5cqw 2px rgba(8, 58, 99, 0.932);
+    align-content: center;
+    justify-items: center;
+}
+.letras{
+    color: rgb(16, 16, 177);
+}
+input{
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
