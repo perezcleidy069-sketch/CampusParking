@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar vehículo</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <header id="header">
+        <div class="head__div">
+            <a href="./index.html"><img src="./IMG/regresar.png" alt="Flecha para regresar" class="Flecha"></a>
+            <div class="div__logo">
+                <img src="./IMG/log.png" alt="Logo del parqueadero" class="logo">
+                <h2 class="nombre__parqueo">CampusParking</h2>
+            </div>
+        </div>
+    </header><hr>
+    <main class="main">
+        <div id="registra__div">
+            <h2>Registro del vehículo</h2>
+            <label for="text">Nombre del propetario:</label><br>
+            <input type="text" required><br>
+            <label for="text">Seleccion el tipo de vehículo:</label><br>
+            <select required>
+                <option value="">Selecione..</option>
+                <option value="option1">Carro</option>
+                <option value="option2">Moto</option>
+                <option value="option3">Bicicleta</option>
+                <option value="option4">Camión</option>
+                <option value="option5">Bus</option>
+            </select><br>
+            <label for="text" >Fecha que ingresa:</label><br>
+            <input type="date" required><br>
+            <label for="text">Hora de entrada:</label><br>
+            <input type="time" required><br>
+            <label for="text">Lugar asignado</label><br>
+            <input type="text" required>
+        </div>
+    </main>
     <script src="comple.js"></script>
 </body>
 </html>

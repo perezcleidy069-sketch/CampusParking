@@ -1,3 +1,4 @@
+/* Estilo para el Login*/
 *{
     padding:0;
     margin: 0;
@@ -5,7 +6,7 @@
 }
 
 body{
-    background-color: rgba(32, 115, 194, 0.979);
+    background-image: linear-gradient(  rgb(221, 237, 248),rgb(31, 123, 209), rgba(42, 184, 240, 0.808));
     height: 100vh;
 }
 #header{
@@ -21,7 +22,7 @@ body{
     width: 45px;
 }
 .nombre__logo{
-    color: rgb(207, 207, 207);
+    color: rgb(54, 39, 39);
 }
 
 #login{
@@ -46,4 +47,38 @@ body{
 input{
     border-radius: 5px;
     margin-bottom: 10px;
+}
+/* Estilo para la pagina para registar vehiculo*/
+.head__div{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    padding: 25px;
+    width: 100vh;
+    
+}
+
+.Flecha{
+    width: 35px;
+}
+.nombre__parqueo{
+    color: rgb(4, 83, 136);
+}
+.div__logo{
+    display: flex;
+    margin: 15px;
+}
+.main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 2px;
+}
+#registra__div{
+    border: 1px solid white;
+    background-color: rgba(235, 241, 245, 0.918);
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    padding: 10px;
 }
