@@ -1,0 +1,59 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(  rgb(221, 237, 248),rgb(31, 123, 209), rgba(42, 184, 240, 0.808));
+    height: 100vh;
+}
+/*Decoracion del encabezado*/
+.head__div{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    padding: 25px;
+    width: 100vh;
+    
+}
+
+.Flecha{
+    width: 35px;
+}
+.logo{
+    width: 50px;
+}
+.nombre__parqueo{
+    color: rgb(4, 83, 136);
+}
+.div__logo{
+    display: flex;
+    margin: 15px;
+}
+
+/*Decoracion de la de la asignacion del vehiculo*/
+#main{
+    display: flex;
+
+}
+
+.vehiculo{
+    width: 65px;
+    display: inline-flex;
+}
+.boton{
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.seccion1{
+    display: inline-block;
+    margin: 10px ;
+    padding: 10px;
+    justify-items: center;
+    align-content: center;
+}
+.section2{
+    display: inline-block;
+    margin:20px
+}
