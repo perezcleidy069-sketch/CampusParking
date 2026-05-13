@@ -39,7 +39,7 @@ body{
 
 #encabezado__nav{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr ;
     padding: 10px;
 }
 .encabezado__div{
