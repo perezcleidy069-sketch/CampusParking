@@ -33,3 +33,26 @@ boton.addEventListener("click", (e)=>{
         mensaje.style.color="pink"
     }
 })
+
+//Registrar vehiculos 
+
+const propetario=document.getElementById("propetario");
+const tipoVehiculo=document.getElementById("cars");
+const fechaIngreso=document.getElementById("hora");
+const asignacion=document.getElementById("botons");
+
+formulario.addEventListener("submit", function(e){
+    e.preventDefault
+    const registroVehiculos=Json.parse(localStorage.getItem(registroVehiculos)) || []
+    nombrePro=propetario.value;
+    typeCars=tipoVehiculo.value;
+    fecha=fechaIngreso.value;
+    lugar=asignacion.value;
+
+    transportes={nombrePro, typeCars, fecha, lugar};
+    registroVehiculos.push(transportes);
+
+    localStorage.setItem("registroVehiculos", JSON.stringify(registroVehiculos))
+    console.log("Guardado en local storage")
+    formulario.resert()
+})
