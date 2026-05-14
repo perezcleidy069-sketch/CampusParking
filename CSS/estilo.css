@@ -61,7 +61,7 @@ body{
     width: 65px;
     display: inline-flex;
 }
-.boton{
+#boton{
     margin: 13px;
     border-radius: 5px;
     padding: 5px;

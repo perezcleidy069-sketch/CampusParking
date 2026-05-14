@@ -1,41 +1,3 @@
-//Función para ingresar en en loggin 
-const nombreIn=document.getElementById("nombre");
-const correoIn=document.getElementById("correo");
-const boton=document.getElementById("boton");
-const contraseñaIn=document.getElementById("contraseña")
-const mensaje=document.getElementById("mensajeError")
-let registrar=[
-    {
-        nombre:"admin",
-        correo:"admin@campusparking.com",
-        contraseña:"Admin123"
-    }
-];
-
-boton.addEventListener("click", (e)=>{
-    e.preventDefault();
-    const nombre=nombreIn.value.trim();
-    const correo=correoIn.value.trim();
-    const contraseña=contraseñaIn.value.trim();
-
-    mensaje.textContent="";
-
-    if(nombre=== "" || correo==="" || contraseña===""){
-        mensaje.textContent="⚠️ Por favor ingrese los datos que se le solicitan"
-        mensaje.style.color="black";   
-        return; 
-    }
-    const usuarioEncontrado=registrar.find(user=> user.nombre===nombre && user.correo===correo && user.contraseña===contraseña);
-    if (usuarioEncontrado){
-        window.location.href=("home.html");
-    }else{
-        mensaje.textContent="❌ Los datos ingresados incorrectos"
-        mensaje.style.color="pink"
-    }
-})
-
-//Registrar vehiculos 
-
 const formulario=document.getElementById("formulario");
 const propetario=document.getElementById("propetario");
 const inputPlaca=document.getElementById("place");
@@ -44,7 +6,8 @@ const inputFijo=document.getElementById("placaFija")
 const tipoVehiculo=document.getElementById("car");
 const horaIngreso=document.getElementById("hora");
 const fechaIngreso=document.getElementById("fecha");
-const asignacion=document.getElementById("botons");
+const asignacion=document.getElementById("boton");
+const tarjetaMarca=document.getElementById("tarjeta")
 const linkAsignar=document.querySelector('a[href="./asignarLugar.html"]');
 
 const spanLugar=document.getElementById("botons");
@@ -52,32 +15,38 @@ const spanMarca=document.getElementById("marca");
 
 let editando=null;
 
+tipoVehiculo.addEventListener("change", (e)=>{
+    const seleccionOpcion=e.target.selectedOptions[0]
+    const prefix=seleccionOpcion.getAttribute("data-prefix");
+
+    console.log("cambiando el prefijo a: ", prefix)
+
+    if(inputFijo){
+        inputFijo.textContent=prefix || "---";
+    }
+});
+
 //para que cargue los otros html al abrir el formulario
 
-window.addEventListener("load", ()=>{
+window.addEventListener("DOMContentLoaded", ()=>{
     const LugarTemp=localStorage.getItem("LugarTemporal");
     const marcaTemp=localStorage.getItem("MarcaTemporal")
     const tarifaMarca=localStorage.getItem("TarifaMarca");
 
-    if(LugarTemp){
-        spanLugar.textContent=" -Seleccionado: " + LugarTemp
+    if(LugarTemp && LugarTemp !=""){
+        spanLugar.textContent= ` - Seleccionado: ${lugarGuardado}`;
+        spanLugar.style.color="#2ecc71";
+        spanLugar.classList.add("activo")
     }
-    if(marcaTemp){
-        spanMarca.textContent=" -Seleccionado: " + marcaTemp
+    else{
+        spanLugar.textContent="(Pediente)"
+    }
+    if(marcaTemp && marcaTemp !=""){
+        spanMarca.textContent=` - Seleccionado: ${lugarGuardado}`
+    }else{
+        spanMarca.textContent="(Pediente)"
     }
 });
-
-//funccion para cuando el de click en el tipo de vehiculo le escriba el la letra de las placas
-
-tipoVehiculo.addEventListener("change", ()=>{
-    const seleccionOpcion=tipoVehiculo.options[tipoVehiculo.selectedIndex];
-    const prefix=seleccionOpcion.getAttribute("data-prefix");
-    inputFijo.textContent=prefix || "---";
-
-    const secciones={ "option1": "#carro", "option2": "#moto", "option3": "#bicicleta"}
-    linkAsignar.href=`./asignarLugar.html${secciones[tipoVehiculo.value] || ""}`;
-});
-
 
 //Para guardar el registro que se realiza
 formulario.addEventListener("submit", function(e){
@@ -85,8 +54,8 @@ formulario.addEventListener("submit", function(e){
     const registroVehi=JSON.parse(localStorage.getItem("registroVehiculos")) || []
 
 
-    const precios={"option1": 10, "opciton2": 8, "option3": 5}
-    const tarifaBase=precioS[tipoVehiculo.value] || 0;
+    const precios={"option1": 10, "option2": 8, "option3": 5}
+    const tarifaBase=precios[tipoVehiculo.value] || 0;
     const propinaMarca=parseFloat(localStorage.getItem("TarifaMarca"))|| 0;
     
     const nuevoRegistro={
@@ -104,7 +73,7 @@ formulario.addEventListener("submit", function(e){
 
     if(editando){
         const reg=registroVehi.findIndex(r=> r.id===editando);
-        registroVehiculos[reg]=nuevoRegistro;
+        registroVehi[reg]=nuevoRegistro;
         editando=null
     }else{
         registroVehi.push(nuevoRegistro)
@@ -120,3 +89,4 @@ formulario.addEventListener("submit", function(e){
     console.log("Guardado en local storage")
     formulario.reset()
 })
+

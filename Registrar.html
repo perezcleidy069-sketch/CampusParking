@@ -31,8 +31,8 @@
             </select><br>
 
             <label for="text">Placa del vehículo:</label><br>
-            <div class="estilo__div">
-                <span id="placaFija">---</span>
+            <div class="estilo__div" >
+                <b id="placaFija" style="min-width: 40px;">---</b>
                 <input type="text" id="place" maxlength="5" required id="lugar"><br>
             </div>
 
@@ -42,8 +42,8 @@
             <input type="time" id="hora" required><br>
 
             <div>
-                <a href="./asignarLugar.html" >Asignar Lugar <span id="botons"></span></a><br>
-                <a href="./marcasVehiculos.html">Seleccionar Marca del vehículo: <span id="marca"></span></a>
+                <a href="./asignarLugar.html" >Asignar Lugar <span id="botons" class="seleccionar__boton"></span></a><br>
+                <a href="./marcasVehiculos.html">Seleccionar Marca del vehículo: <span id="marca" class="seleccionar__boton"></span></a>
             </div>
 
             <input type="hidden" id="lugarOculto">
@@ -52,6 +52,6 @@
             <button class="boto" id="botons">Mostrar</button>
         </form>
     </main>
-    <script src="comple.js"></script>
+    <script src="./javascripts/registar.js"></script>
 </body>
 </html>
