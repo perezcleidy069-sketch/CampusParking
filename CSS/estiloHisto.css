@@ -1,0 +1,73 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(  rgb(221, 237, 248),rgb(31, 123, 209), rgba(42, 184, 240, 0.808));
+    height: 100vh;
+    display: flex;
+}
+/*Decoracion del encabezado*/
+
+#header{
+    width: 100%;
+}
+
+.logo__div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.856);
+    height: 60px;
+}
+
+.logo_div, p{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+#header__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.header__img{
+    width: 35px;
+}
+.logo{
+    width: 50px;
+}
+.nombre__parqueo{
+    color: rgb(4, 83, 136);
+}
+.logo{
+    display: flex;
+    margin: 15px;
+}
+.perfil{
+    width: 50px;
+}
+.search__input{
+    display: flex;
+    justify-content: center;
+    border: none;
+    height: 40px;
+    width: 200px;
+    border-radius: 16px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.search__input:hover{
+    width: 300px;
+
+}
+
+
