@@ -22,21 +22,34 @@
             <label for="text">Nombre del propetario:</label><br>
             <input type="text" id="propetario" required><br>
             <label for="text">Seleccion el tipo de vehículo:</label><br>
+            
             <select id="car" required>
                 <option value="">Selecione..</option>
-                <option value="option1">Carro</option>
-                <option value="option2">Moto</option>
-                <option value="option3">Bicicleta</option>
-                <option value="option4">Camión</option>
+                <option value="option1" data-prefix="ABC"="">Carro</option>
+                <option value="option2" data-prefix="MT">Moto</option>
+                <option value="option3" data-prefix="B"="">Bicicleta</option>
             </select><br>
+
             <label for="text">Placa del vehículo:</label><br>
-            <input type="text" id="place" maxlength="5"><br>
+            <div class="estilo__div">
+                <span id="placaFija">---</span>
+                <input type="text" id="place" maxlength="5" required id="lugar"><br>
+            </div>
+
             <label for="text" >Fecha que ingresa:</label><br>
             <input type="date"  id="fecha" required><br>
             <label for="text">Hora de entrada:</label><br>
             <input type="time" id="hora" required><br>
-            <button class="botons">Asignar lugar</button>
-            <button class="botons" id="botons">Mostrar</button>
+
+            <div>
+                <a href="./asignarLugar.html" >Asignar Lugar <span id="botons"></span></a><br>
+                <a href="./marcasVehiculos.html">Seleccionar Marca del vehículo: <span id="marca"></span></a>
+            </div>
+
+            <input type="hidden" id="lugarOculto">
+            <input type="hidden" id="marcaOculta">
+            <button type="submit">Registrar ingreso</button>
+            <button class="boto" id="botons">Mostrar</button>
         </form>
     </main>
     <script src="comple.js"></script>
