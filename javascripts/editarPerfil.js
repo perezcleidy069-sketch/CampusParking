@@ -1,7 +1,8 @@
 let listaUsuario=JSON.parse(localStorage.getItem('registrar')) || [];
-
+console.log(listaUsuario)
 let correoSesion=localStorage.getItem('correoActivo')
  let user=listaUsuario.find(u=> u.correo===correoSesion);
+
 
  if(user){
     document.getElementById("tex__nombre").innerText=user.nombre;
@@ -46,6 +47,4 @@ const loguout=()=>{
     window.location='./index.html'
 }
 
-const cerrar=document.querySelector('click',"cerrar")
-
-cerrar.addEventListener('click' cerrar)
+const cerrar =document.querySelector('click',"cerrar")

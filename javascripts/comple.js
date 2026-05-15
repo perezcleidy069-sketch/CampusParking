@@ -9,7 +9,7 @@ const mensaje = document.getElementById("mensajeError");
 const obtenerUsuarios = () => {
     const data = localStorage.getItem("users");
     if (!data) {
-        const inicial = [{ nombre: "admin", correo: "admin@campusparking.com", contraseña: "1234" }];
+        let inicial = [{ nombre: "admin", correo: "admin@campusparking.com", contraseña: "1234" }];
         localStorage.setItem("users", JSON.stringify(inicial));
         return inicial;
     }
@@ -25,7 +25,6 @@ boton.addEventListener("click", (e) => {
 
     // 2. Llamamos a la función para tener la lista real de usuarios
     const listaUsuarios = obtenerUsuarios();
-
     mensaje.textContent = "";
 
     if (nombre === "" || correo === "" || contraseña === "") {

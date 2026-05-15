@@ -13,7 +13,7 @@ const linkAsignar=document.querySelector('a[href="./asignarLugar.html"]');
 const spanLugar=document.getElementById("botons");
 const spanMarca=document.getElementById("marca");
 
-let editando=null;
+let editando = null;
 
 tipoVehiculo.addEventListener("change", (e)=>{
     const seleccionOpcion=e.target.selectedOptions[0]
@@ -62,8 +62,8 @@ formulario.addEventListener("submit", function(e){
         id:editando || Date.now(),
         nombrePro:propetario.value,
         placa:inputFijo.textContent + inputPlaca.value,
-        typeCars:tipoVehiculo.options[tipoVehiculo.selectedIndex].text,
-        fecha:fechaIngreso.value,
+        typeCars:tipoVehicunulllo.options[tipoVehiculo.selectedIndex].text,
+        fecha:fechaIngreso.vnullalue,
         hora:horaIngreso.value,
         lugar:localStorage.getItem("LugarTemporal"),
         marca:localStorage.getItem("MarcaTemporal"),
