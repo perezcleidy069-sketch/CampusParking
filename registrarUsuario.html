@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>registrarse</title>
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
@@ -13,24 +13,21 @@
             <h2 class="nombre__parqueo">CampusParking</h2>
         </div>
     </header>
-    <form id="login" class="login">
+    <form id="login-registro" class="login">
         <div class="login__registrar">
             <img src="./IMG/persona.png" alt="Icono de un persona">
-            <h2>iniciar sesión</h2><br>
+            <h2>Registrese</h2><br>
             <label for="text" class="letras">Nombre:</label><br>
-            <input type="text" id="nombre" required><br>
-            <label for="text" class="letras" r  equired >Correo Electrónico:</label><br>
-            <input type="email" id="correo"><br>
+            <input type="text" id="nombre1" required><br>
+            <label for="text" class="letras" required >Correo Electrónico:</label><br>
+            <input type="email" id="correo1"><br>
             <label for="contraseñ"  class="letras" required>contraseña</label><br>
-            <input type="password" id="contraseña"><br>
-            <button id="boton" type="submit">Ingresar</button>
+            <input type="password" id="contraseña1"><br>
+            <button type="submit">registrarse</button>
             
             <p id="mensajeError"></p>
         </div>
-    </form>
-
-    <a href="registrarUsuario.html"><button> registrarse</button></a>
-
-    <script src="./javascripts/comple.js"></script>
+    </form>    
+    <script src="/javascripts/comple.js"></script>
 </body>
 </html>

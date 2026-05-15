@@ -1,68 +1,78 @@
-//Función para ingresar en en loggin 
-const nombreIn = document.getElementById("nombre");
-const correoIn = document.getElementById("correo");
-const contraseñaIn = document.getElementById("contraseña");
-const boton = document.getElementById("boton");
+// ==========================================
+// 1. LOGIN (Múltiples Usuarios)
+// ==========================================
 const mensaje = document.getElementById("mensajeError");
+const form = document.getElementById("login");
 
-// 1. Corregimos la obtención de datos
-const obtenerUsuarios = () => {
-    const data = localStorage.getItem("users");
-    if (!data) {
-        let inicial = [{ nombre: "admin", correo: "admin@campusparking.com", contraseña: "1234" }];
-        localStorage.setItem("users", JSON.stringify(inicial));
-        return inicial;
-    }
-    return JSON.parse(data);
-}
-
-boton.addEventListener("click", (e) => {
+function validarDatos(e) {
     e.preventDefault();
-    
-    const nombre = nombreIn.value.trim();
-    const correo = correoIn.value.trim();
-    const contraseña = contraseñaIn.value.trim();
+    const nombreVal = document.getElementById("nombre").value.trim();
+    const correoVal = document.getElementById("correo").value.trim();
+    const contraVal = document.getElementById("contraseña").value.trim();
 
-    // 2. Llamamos a la función para tener la lista real de usuarios
-    const listaUsuarios = obtenerUsuarios();
-    mensaje.textContent = "";
+    // Traemos la lista de usuarios, si no existe, será un array vacío []
+    const listaUsuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    if (nombre === "" || correo === "" || contraseña === "") {
-        mensaje.textContent = "⚠️ Por favor ingrese los datos solicitados";
-        mensaje.style.color = "black";   
-        return; 
-    }
-
-    // 3. CAMBIO CLAVE: Usamos 'listaUsuarios' (que es el array) para buscar
-    const usuarioEncontrado = listaUsuarios.find(u => 
-        u.nombre === nombre && 
-        u.correo === correo && 
-        u.contraseña === contraseña
+    // Buscamos si existe algún usuario que coincida con TODOS los datos del login
+    const usuarioEncontrado = listaUsuarios.find(user => 
+        user.usuario === nombreVal && 
+        user.correo === correoVal && 
+        user.contraseña === contraVal
     );
 
     if (usuarioEncontrado) {
-        // Guardamos quién entró para poder editarlo luego
+        alert(`¡Inicio exitoso! Bienvenido ${usuarioEncontrado.usuario}`);
+        // Opcional: Guardar temporalmente quién inició sesión para usar su nombre en home.html
         localStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
-        
-        mensaje.textContent = "✅ Accediendo...";
-        mensaje.style.color = "green";
-
-        // Redirección
-        window.location.href = "home.html";
+        window.location.href = "./home.html";
     } else {
-        mensaje.textContent = "❌ Los datos ingresados son incorrectos";
-        mensaje.style.color = "red"; // Cambiado a rojo para que se lea mejor que el rosa
+        mensaje.textContent = "Datos incorrectos o usuario no registrado.";
     }
-});
+}
 
-// 4. Limpiar campos al refrescar (opcional, para evitar que se queden pegados)
-window.onload = () => {
-    nombreIn.value = "";
-    correoIn.value = "";
-    contraseñaIn.value = "";
+if (form) {
+    form.addEventListener('submit', validarDatos);
+}
+
+
+// ==========================================
+// 2. REGISTRO (Múltiples Usuarios)
+// ==========================================
+const form2 = document.getElementById("login-registro");
+
+const registro = (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre1").value.trim();
+    const correo = document.getElementById("correo1").value.trim();
+    const contra = document.getElementById("contraseña1").value.trim();
+    
+    // 1. Obtener la lista de usuarios que ya existen (o crear una vacía)
+    const listaUsuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // 2. Validar que el correo no esté registrado ya por otra persona
+    const existeCorreo = listaUsuarios.some(user => user.correo === correo);
+    if (existeCorreo) {
+        alert("Este correo ya está registrado. Intenta iniciar sesión.");
+        return; // Detiene la función aquí
+    }
+
+    // 3. Crear el nuevo usuario
+    const nuevosDatos = {
+        usuario: nombre,
+        correo: correo,
+        contraseña: contra
+    };
+    
+    // 4. Agregar el nuevo usuario a la lista existente sin borrar los anteriores
+    listaUsuarios.push(nuevosDatos);
+    
+    // 5. Guardar la lista actualizada en LocalStorage
+    localStorage.setItem("usuarios", JSON.stringify(listaUsuarios));
+    
+    alert("Usuario registrado con éxito. ¡Ya puedes iniciar sesión!");
+    form2.reset(); 
 };
 
-
-
-
-
+if (form2) {
+    form2.addEventListener('submit', registro);
+}
