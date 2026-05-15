@@ -14,7 +14,7 @@
         </div>
        
         <nav id="header__nav">
-            <img src="./IMG/regresar.png" alt="Flecha de regresar" class="header__img">
+            <a href="./home.html"><img src="./IMG/regresar.png" alt="Flecha de regresar" class="header__img"></a>
             
             <input type="search" placeholder="🔍 Buscar por placa" class="search__input">
             
@@ -22,6 +22,26 @@
         </nav>
         
     </header>
+    <main>
+        <h2>Historial de Vehículos</h2>
+    
+    <table border="1" id="tablaHistorial" style="width:100%; border-collapse: collapse; text-align: left;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th>Lugar</th>
+                <th>Dueño</th>
+                <th>Vehículo</th>
+                <th>Placa</th>
+                <th>Entrada</th>
+                <th>Tarifa</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            </tbody>
+    </table>
+    </main>
+    <script src="./historial.js"></script>
     
 </body>
 </html>
