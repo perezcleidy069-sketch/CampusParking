@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: linear-gradient(  rgb(221, 237, 248),rgb(31, 123, 209), rgba(42, 184, 240, 0.808));
+   background-color: rgba(109, 175, 197, 0.788);
     height: 100vh;
 }
 /*Decoracion del encabezado*/
