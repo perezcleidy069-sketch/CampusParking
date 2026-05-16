@@ -12,10 +12,13 @@
             <img src="./IMG/log.png" alt="Logo de parqueador" class="logo">
             <h2 class="nombre__parqueo">CampusParking</h2>
         </div>
+        <div class="regresandos">
+            <a href="./index.html"><button>Regresar</button></a>
+        </div>
     </header>
-    <form id="login-registro" class="login">
+    <form id="login-registro" class="logins">
         <div class="login__registrar">
-            <img src="./IMG/persona.png" alt="Icono de un persona">
+            <img src="./IMG/persona.png" alt="Icono de un persona" class="imagene">
             <h2>Registrese</h2><br>
             <label for="text" class="letras">Nombre:</label><br>
             <input type="text" id="nombre1" required><br>
@@ -23,7 +26,9 @@
             <input type="email" id="correo1"><br>
             <label for="contraseñ"  class="letras" required>contraseña</label><br>
             <input type="password" id="contraseña1"><br>
-            <a href="./index.html"><button type="submit">registrarse</button></a>
+            <div class="boton-ingres">
+                 <a href="./index.html"><button type="submit" id="botoni">registrarse</button></a>
+            </div>
             
             <p id="mensajeError"></p>
         </div>
