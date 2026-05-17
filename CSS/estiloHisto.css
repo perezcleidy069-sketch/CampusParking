@@ -52,7 +52,7 @@ body{
     margin: 15px;
 }
 .perfil{
-    width: 50px;
+    width:50px;
 }
 .search__input{
     display: flex;
@@ -82,15 +82,13 @@ body{
 .main__div{
     display: flex;
     flex-direction: column;
-    border: 1px solid white;
-    border-radius: 40px;
-    background-color: rgba(245, 232, 232, 0.829);
-    box-shadow: 5px 5px 5px 0px rgb(224, 214, 214) ;
     overflow: hidden;
     align-items: center;
+    padding: 10px;
+    margin: 10px;
 }
 .imagen{
-    width: 300px;
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,8 +97,8 @@ body{
     padding: 5px;
     margin: 10px;
     text-align: center;
-    color: rgba(67, 67, 158, 0.915);
-    font-size: 30px;
+    color: rgba(0, 0, 0, 0.915);
+    font-size: 20px;
 }
 .boton__div{
     margin: 15%;
@@ -110,6 +108,9 @@ body{
     margin: 5px;
     padding: 10px;
     border-radius: 10px;
+    border: 1px solid rgb(235, 241, 243);
+    background-color: rgb(206, 232, 241);
+    
 }
 .cerrar{
     text-decoration: navajowhite;
@@ -129,7 +130,27 @@ main{
 }
 @media(min-width:800px){
     main{
-        font-sixe:50px;
+        font-size:15px;
     }
+    .main__div{
+    border: 1px solid white;
+    border-radius: 40px;
+    background-color: rgba(245, 232, 232, 0.829);
+    box-shadow: 5px 5px 5px 0px rgb(224, 214, 214) ;
+
 }
+.boti{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(178, 210, 221);
+    background-color: rgb(165, 219, 237);
+    
+}
+}
+.back{
+    font-size: 60px;
+    margin: 10px;
+}
+
 

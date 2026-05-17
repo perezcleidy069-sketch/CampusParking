@@ -149,6 +149,7 @@ input{
 .div__logo{
     display: flex;
     margin: 15px;
+
 }
 .main{
     padding: 10px;
@@ -188,6 +189,16 @@ input{
 }
 
 /*Decoracion de los vehiculos*/
+.main__div{
+    display:none;
+}
+@media(min-width:800px){
+    .main__div{
+    display: flex;
+    border: 1px solid white;
+    background-color: rgb(167, 207, 232);
+    border-radius: 50px;
+}
 .vehiculo{
     width: 65px;
     display: inline-flex;
@@ -209,5 +220,17 @@ input{
 }
 .subtitilo{
     text-align: center;
+}
+}
+.head{
+    display: block;
+    justify-items:center;
+
+}
+.head__d{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
+    align-items: center;
 }
 

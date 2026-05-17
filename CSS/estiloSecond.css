@@ -5,6 +5,7 @@
 }
 body{
     background-color: rgba(109, 175, 197, 0.788);
+    display: block;
 }
 #encabezado{
     display:flex;
@@ -61,10 +62,10 @@ body{
     border-color: 1px solid white;
     color: white;
 }
-.encabezado__nav{
-    display: flex;
+#encabezado__nav{
+    display: inline-flex;
     align-content: center;
-    justify-items: center;
+    justify-content: center;
 }
 table {
     width: 80%;

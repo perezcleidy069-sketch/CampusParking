@@ -1,4 +1,4 @@
-const cuerpoTabla = document.getElementById("cuerpoTabla");
+let cuerpoTabla = document.getElementById("cuerpoTabla");
 
 function renderHistorial() {
     // 1. Obtener datos de LocalStorage
@@ -14,7 +14,7 @@ function renderHistorial() {
         fila.innerHTML = `
             <td>${reg.lugar || 'N/A'}</td>
             <td>${reg.nombrePro}</td>
-            <td>${reg.tipoNombre} - ${reg.marca}</td>
+            <td>${reg.tipoNombrea}|| 'Vehículo'}</td>
             <td>${reg.placa}</td>
             <td>${reg.fecha} ${reg.hora}</td>
             <td>$${reg.totalBase.toFixed(2)}</td>
@@ -42,5 +42,7 @@ window.finalizar = (id) => {
     window.eliminar(id);
 };
 
-// Cargar al abrir la página
-document.addEventListener("DOMContentLoaded", renderHistorial);
+document.addEventListener("DOMContentLoaded", () => {
+    cuerpoTabla = document.getElementById("cuerpoTabla"); // Ahora sí te dejará guardarlo aquí sin romper nada
+    renderHistorial();
+});
