@@ -17,7 +17,7 @@ function validarDatos(e) {
     const usuarioEncontrado = listaUsuarios.find(user => 
         user.usuario === nombreVal && 
         user.correo === correoVal && 
-        user.contraseña === contraVal
+        user.contrasea === contraVal
     );
 
     if (usuarioEncontrado) {
@@ -60,7 +60,7 @@ const registro = (e) => {
     const nuevosDatos = {
         usuario: nombre,
         correo: correo,
-        contraseña: contra
+        contrasea: contra
     };
     
     // 4. Agregar el nuevo usuario a la lista existente sin borrar los anteriores
