@@ -8,7 +8,7 @@ function validarDatos(e) {
     e.preventDefault();
     const nombreVal = document.getElementById("nombre").value.trim();
     const correoVal = document.getElementById("correo").value.trim();
-    const contraVal = document.getElementById("contrasea").value.trim();
+    const contraVal = document.getElementById("password").value.trim();
 
     // Traemos la lista de usuarios, si no existe, será un array vacío []
     const listaUsuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -17,7 +17,7 @@ function validarDatos(e) {
     const usuarioEncontrado = listaUsuarios.find(user => 
         user.usuario === nombreVal && 
         user.correo === correoVal && 
-        user.contrasea === contraVal
+        user.password === contraVal
     );
 
     if (usuarioEncontrado) {
@@ -44,7 +44,7 @@ const registro = (e) => {
     e.preventDefault();
     const nombre = document.getElementById("nombre1").value.trim();
     const correo = document.getElementById("correo1").value.trim();
-    const contra = document.getElementById("contrasea1").value.trim();
+    const contra = document.getElementById("password1").value.trim();
     
     // 1. Obtener la lista de usuarios que ya existen (o crear una vacía)
     const listaUsuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -60,7 +60,7 @@ const registro = (e) => {
     const nuevosDatos = {
         usuario: nombre,
         correo: correo,
-        contrasea: contra
+        password: contra
     };
     
     // 4. Agregar el nuevo usuario a la lista existente sin borrar los anteriores
