@@ -44,7 +44,7 @@ const registro = (e) => {
     e.preventDefault();
     const nombre = document.getElementById("nombre1").value.trim();
     const correo = document.getElementById("correo1").value.trim();
-    const contra = document.getElementById("contraseña1").value.trim();
+    const contra = document.getElementById("contrasea1").value.trim();
     
     // 1. Obtener la lista de usuarios que ya existen (o crear una vacía)
     const listaUsuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
