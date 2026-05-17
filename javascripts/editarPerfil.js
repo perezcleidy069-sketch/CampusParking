@@ -40,11 +40,3 @@ document.getElementById("btn-guardar").addEventListener('click', ()=>{
     alert("Datos actualizados ✅");
     location.reload();
 })
-
-//Cerrar sesiòn revisar 
-const loguout=()=>{
-    sessionStorage.removeItem('token')
-    window.location='./index.html'
-}
-
-const cerrar =document.querySelector('click',"cerrar")
