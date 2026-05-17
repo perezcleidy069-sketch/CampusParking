@@ -8,7 +8,7 @@ function validarDatos(e) {
     e.preventDefault();
     const nombreVal = document.getElementById("nombre").value.trim();
     const correoVal = document.getElementById("correo").value.trim();
-    const contraVal = document.getElementById("contraseña").value.trim();
+    const contraVal = document.getElementById("contrasea").value.trim();
 
     // Traemos la lista de usuarios, si no existe, será un array vacío []
     const listaUsuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
